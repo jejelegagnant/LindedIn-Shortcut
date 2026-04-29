@@ -1,6 +1,6 @@
-name: linkedin-shortcut
+name: quick-linkedin
 base: core24
-version: '3.0-ipc'
+version: '3.1'
 summary: A strictly confined LinkedIn shortcut daemon.
 description: |
   Uses a Client/Server IPC architecture to bridge hardware events
@@ -23,9 +23,13 @@ apps:
       - raw-input
   agent:
     command: bin/run-agent.sh
-    autostart: linkedin-shortcut.desktop
+    autostart: quick-linkedin.desktop
     plugs:
       - desktop
+      - desktop-legacy
+      - wayland
+      - x11
+      - home  # Add this to resolve mount namespace issues
   setup:
     command: bin/setup.sh
 

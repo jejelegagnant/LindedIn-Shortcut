@@ -21,7 +21,7 @@ void update_modifier(int code, int value) {
 // IPC Logic: Send a UDP packet to the Agent's socket
 // Replace your old trigger_agent() function with this one:
 void trigger_agent() {
-    char *fifo_path = "/var/snap/linkedin-shortcut/common/trigger.fifo";
+    char *fifo_path = "/var/snap/quick-linkedin/common/trigger.fifo";
     
     // O_NONBLOCK prevents the root daemon from hanging if the agent isn't running
     int fd = open(fifo_path, O_WRONLY | O_NONBLOCK);

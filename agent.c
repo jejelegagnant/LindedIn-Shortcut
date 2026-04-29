@@ -5,7 +5,7 @@
 
 int main() {
     setbuf(stdout, NULL);
-    char *fifo_path = "/var/snap/linkedin-shortcut/common/trigger.fifo";
+    char *fifo_path = "/var/snap/quick-linkedin/common/trigger.fifo";
     
     printf("User Agent active. Waiting for hardware daemon triggers via FIFO...\n");
 
@@ -22,8 +22,8 @@ int main() {
         // Read until the pipe is closed by the daemon
         while (read(fd, &buf, 1) > 0) {
             if (buf == '1') {
-                printf("Hardware trigger received! Executing xdg-open...\n");
-                system("xdg-open \"https://www.linkedin.com\" > /dev/null 2>&1 &");
+                // Keep only the launch command for the final version[cite: 1]
+                system("xdg-open \"https://www.linkedin.com\" &");
             }
         }
         close(fd);

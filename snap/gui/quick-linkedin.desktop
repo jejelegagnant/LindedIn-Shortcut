@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Quick LinkedIn Agent
+Exec=quick-linkedin.agent
+Terminal=false
+NoDisplay=true
+X-GNOME-Autostart-enabled=true
