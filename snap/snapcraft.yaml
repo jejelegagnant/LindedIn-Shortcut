@@ -8,6 +8,9 @@ description: |
 
 grade: stable
 confinement: classic
+architectures:
+  - build-on: amd64
+    build-for: [amd64, arm64]
 
 apps:
   daemon:
